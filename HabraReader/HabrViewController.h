@@ -1,5 +1,5 @@
 //
-//  MasterViewController.h
+//  HabrViewController.h
 //  HabraReader
 //
 //  Created by Philip Vasilchenko on 30.08.12.
@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <RSSKit/RSSKit.h>
 
 @class DetailViewController;
 
-@interface MasterViewController : UITableViewController
-
+@interface HabrViewController : UITableViewController <RSSParserDelegate>
 @property (strong, nonatomic) DetailViewController *detailViewController;
-
+@property (nonatomic, retain) DetailViewController *dddController;
 @end

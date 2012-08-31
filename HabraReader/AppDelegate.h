@@ -10,8 +10,11 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) UIWindow *window;
+@property (nonatomic, retain) UINavigationController *navigationController;
 
-@property (strong, nonatomic) UINavigationController *navigationController;
++ (AppDelegate *)sharedInstance;
+
+- (void)setNetworkActivityIndicatorVisible:(BOOL)setVisible;
 
 @end

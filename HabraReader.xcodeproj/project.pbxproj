@@ -13,11 +13,22 @@
 		6650EFFF15EFF9FE00F5F0C6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6650EFFD15EFF9FE00F5F0C6 /* InfoPlist.strings */; };
 		6650F00115EFF9FE00F5F0C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6650F00015EFF9FE00F5F0C6 /* main.m */; };
 		6650F00515EFF9FE00F5F0C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6650F00415EFF9FE00F5F0C6 /* AppDelegate.m */; };
-		6650F00815EFF9FE00F5F0C6 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6650F00715EFF9FE00F5F0C6 /* MasterViewController.m */; };
+		6650F00815EFF9FE00F5F0C6 /* HabrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6650F00715EFF9FE00F5F0C6 /* HabrViewController.m */; };
 		6650F00B15EFF9FE00F5F0C6 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6650F00A15EFF9FE00F5F0C6 /* DetailViewController.m */; };
-		6650F00E15EFF9FE00F5F0C6 /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6650F00C15EFF9FE00F5F0C6 /* MasterViewController.xib */; };
+		6650F00E15EFF9FE00F5F0C6 /* HabrViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6650F00C15EFF9FE00F5F0C6 /* HabrViewController.xib */; };
 		6650F01115EFF9FE00F5F0C6 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6650F00F15EFF9FE00F5F0C6 /* DetailViewController.xib */; };
+		667544EB15F10B43008FE800 /* libRSSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667544EA15F10B35008FE800 /* libRSSKit.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		667544E915F10B35008FE800 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 667544E215F10B35008FE800 /* RSSKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BF3A6F74152C100A0020B7C5;
+			remoteInfo = RSSKit;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		6650EFF015EFF9FD00F5F0C6 /* HabraReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabraReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,12 +41,14 @@
 		6650F00215EFF9FE00F5F0C6 /* HabraReader-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HabraReader-Prefix.pch"; sourceTree = "<group>"; };
 		6650F00315EFF9FE00F5F0C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6650F00415EFF9FE00F5F0C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6650F00615EFF9FE00F5F0C6 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		6650F00715EFF9FE00F5F0C6 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		6650F00615EFF9FE00F5F0C6 /* HabrViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HabrViewController.h; sourceTree = "<group>"; };
+		6650F00715EFF9FE00F5F0C6 /* HabrViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HabrViewController.m; sourceTree = "<group>"; };
 		6650F00915EFF9FE00F5F0C6 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		6650F00A15EFF9FE00F5F0C6 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		6650F00D15EFF9FE00F5F0C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
+		6650F00D15EFF9FE00F5F0C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HabrViewController.xib; sourceTree = "<group>"; };
 		6650F01015EFF9FE00F5F0C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		6650F01715EFFAEA00F5F0C6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		667544E215F10B35008FE800 /* RSSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSSKit.xcodeproj; path = RSSKit/RSSKit.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				667544EB15F10B43008FE800 /* libRSSKit.a in Frameworks */,
 				6650EFF515EFF9FD00F5F0C6 /* UIKit.framework in Frameworks */,
 				6650EFF715EFF9FD00F5F0C6 /* Foundation.framework in Frameworks */,
 				6650EFF915EFF9FE00F5F0C6 /* CoreGraphics.framework in Frameworks */,
@@ -72,6 +86,8 @@
 		6650EFF315EFF9FD00F5F0C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				667544E215F10B35008FE800 /* RSSKit.xcodeproj */,
+				6650F01715EFFAEA00F5F0C6 /* QuartzCore.framework */,
 				6650EFF415EFF9FD00F5F0C6 /* UIKit.framework */,
 				6650EFF615EFF9FD00F5F0C6 /* Foundation.framework */,
 				6650EFF815EFF9FE00F5F0C6 /* CoreGraphics.framework */,
@@ -82,14 +98,9 @@
 		6650EFFA15EFF9FE00F5F0C6 /* HabraReader */ = {
 			isa = PBXGroup;
 			children = (
-				6650F00315EFF9FE00F5F0C6 /* AppDelegate.h */,
-				6650F00415EFF9FE00F5F0C6 /* AppDelegate.m */,
-				6650F00615EFF9FE00F5F0C6 /* MasterViewController.h */,
-				6650F00715EFF9FE00F5F0C6 /* MasterViewController.m */,
-				6650F00915EFF9FE00F5F0C6 /* DetailViewController.h */,
-				6650F00A15EFF9FE00F5F0C6 /* DetailViewController.m */,
-				6650F00C15EFF9FE00F5F0C6 /* MasterViewController.xib */,
-				6650F00F15EFF9FE00F5F0C6 /* DetailViewController.xib */,
+				66DD213415F1213100DC8337 /* Classes */,
+				66DD213715F1219B00DC8337 /* Resources */,
+				66DD213A15F137AA00DC8337 /* Vendors */,
 				6650EFFB15EFF9FE00F5F0C6 /* Supporting Files */,
 			);
 			path = HabraReader;
@@ -104,6 +115,75 @@
 				6650F00215EFF9FE00F5F0C6 /* HabraReader-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		667544E315F10B35008FE800 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				667544EA15F10B35008FE800 /* libRSSKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		66DD213415F1213100DC8337 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				66DD213615F1218600DC8337 /* Habr App Delegate */,
+				66DD213515F1217900DC8337 /* Controllers */,
+				66DD213915F121DD00DC8337 /* Helpers */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		66DD213515F1217900DC8337 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6650F00615EFF9FE00F5F0C6 /* HabrViewController.h */,
+				6650F00715EFF9FE00F5F0C6 /* HabrViewController.m */,
+				6650F00915EFF9FE00F5F0C6 /* DetailViewController.h */,
+				6650F00A15EFF9FE00F5F0C6 /* DetailViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		66DD213615F1218600DC8337 /* Habr App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				6650F00315EFF9FE00F5F0C6 /* AppDelegate.h */,
+				6650F00415EFF9FE00F5F0C6 /* AppDelegate.m */,
+			);
+			name = "Habr App Delegate";
+			sourceTree = "<group>";
+		};
+		66DD213715F1219B00DC8337 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				66DD213815F121A400DC8337 /* Views */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		66DD213815F121A400DC8337 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6650F00C15EFF9FE00F5F0C6 /* HabrViewController.xib */,
+				6650F00F15EFF9FE00F5F0C6 /* DetailViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		66DD213915F121DD00DC8337 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		66DD213A15F137AA00DC8337 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Vendors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +225,12 @@
 			mainGroup = 6650EFE515EFF9FD00F5F0C6;
 			productRefGroup = 6650EFF115EFF9FD00F5F0C6 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 667544E315F10B35008FE800 /* Products */;
+					ProjectRef = 667544E215F10B35008FE800 /* RSSKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				6650EFEF15EFF9FD00F5F0C6 /* HabraReader */,
@@ -152,13 +238,23 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		667544EA15F10B35008FE800 /* libRSSKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRSSKit.a;
+			remoteRef = 667544E915F10B35008FE800 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		6650EFEE15EFF9FD00F5F0C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				6650EFFF15EFF9FE00F5F0C6 /* InfoPlist.strings in Resources */,
-				6650F00E15EFF9FE00F5F0C6 /* MasterViewController.xib in Resources */,
+				6650F00E15EFF9FE00F5F0C6 /* HabrViewController.xib in Resources */,
 				6650F01115EFF9FE00F5F0C6 /* DetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -172,7 +268,7 @@
 			files = (
 				6650F00115EFF9FE00F5F0C6 /* main.m in Sources */,
 				6650F00515EFF9FE00F5F0C6 /* AppDelegate.m in Sources */,
-				6650F00815EFF9FE00F5F0C6 /* MasterViewController.m in Sources */,
+				6650F00815EFF9FE00F5F0C6 /* HabrViewController.m in Sources */,
 				6650F00B15EFF9FE00F5F0C6 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -188,12 +284,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		6650F00C15EFF9FE00F5F0C6 /* MasterViewController.xib */ = {
+		6650F00C15EFF9FE00F5F0C6 /* HabrViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6650F00D15EFF9FE00F5F0C6 /* en */,
 			);
-			name = MasterViewController.xib;
+			name = HabrViewController.xib;
 			sourceTree = "<group>";
 		};
 		6650F00F15EFF9FE00F5F0C6 /* DetailViewController.xib */ = {
@@ -259,7 +355,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HabraReader/HabraReader-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
 				INFOPLIST_FILE = "HabraReader/HabraReader-Info.plist";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(BUILT_PRODUCTS_DIR)/libRSSKit.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -270,7 +371,12 @@
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HabraReader/HabraReader-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
 				INFOPLIST_FILE = "HabraReader/HabraReader-Info.plist";
+				OTHER_LDFLAGS = (
+					"-force_load",
+					"$(BUILT_PRODUCTS_DIR)/libRSSKit.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -295,6 +401,7 @@
 				6650F01615EFF9FE00F5F0C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
