@@ -21,6 +21,12 @@
 		66DD213D15F1509600DC8337 /* HabraPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DD213C15F1509600DC8337 /* HabraPostCell.m */; };
 		66DD214115F1511400DC8337 /* HabraPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD214015F1511400DC8337 /* HabraPostCell.xib */; };
 		66DD214415F156F900DC8337 /* habrauser.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD214315F156F900DC8337 /* habrauser.png */; };
+		66DD215F15F1796B00DC8337 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD215E15F1796B00DC8337 /* Icon.png */; };
+		66DD216115F1796F00DC8337 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD216015F1796F00DC8337 /* Icon@2x.png */; };
+		66DD216315F17A5E00DC8337 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD216215F17A5E00DC8337 /* Default@2x.png */; };
+		66DD216515F17A6000DC8337 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD216415F17A6000DC8337 /* Default.png */; };
+		66DD216815F17AC000DC8337 /* nav-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD216615F17AC000DC8337 /* nav-background.png */; };
+		66DD216915F17AC000DC8337 /* nav-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD216715F17AC000DC8337 /* nav-background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +62,12 @@
 		66DD213C15F1509600DC8337 /* HabraPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HabraPostCell.m; sourceTree = "<group>"; };
 		66DD214015F1511400DC8337 /* HabraPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HabraPostCell.xib; sourceTree = "<group>"; };
 		66DD214315F156F900DC8337 /* habrauser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = habrauser.png; sourceTree = "<group>"; };
+		66DD215E15F1796B00DC8337 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		66DD216015F1796F00DC8337 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		66DD216215F17A5E00DC8337 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../Default@2x.png"; sourceTree = "<group>"; };
+		66DD216415F17A6000DC8337 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../Default.png; sourceTree = "<group>"; };
+		66DD216615F17AC000DC8337 /* nav-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-background.png"; sourceTree = "<group>"; };
+		66DD216715F17AC000DC8337 /* nav-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav-background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +229,12 @@
 			isa = PBXGroup;
 			children = (
 				66DD214315F156F900DC8337 /* habrauser.png */,
+				66DD216615F17AC000DC8337 /* nav-background.png */,
+				66DD216715F17AC000DC8337 /* nav-background@2x.png */,
+				66DD216015F1796F00DC8337 /* Icon@2x.png */,
+				66DD215E15F1796B00DC8337 /* Icon.png */,
+				66DD216415F17A6000DC8337 /* Default.png */,
+				66DD216215F17A5E00DC8337 /* Default@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -293,6 +311,12 @@
 				6650F01115EFF9FE00F5F0C6 /* DetailViewController.xib in Resources */,
 				66DD214115F1511400DC8337 /* HabraPostCell.xib in Resources */,
 				66DD214415F156F900DC8337 /* habrauser.png in Resources */,
+				66DD215F15F1796B00DC8337 /* Icon.png in Resources */,
+				66DD216115F1796F00DC8337 /* Icon@2x.png in Resources */,
+				66DD216315F17A5E00DC8337 /* Default@2x.png in Resources */,
+				66DD216515F17A6000DC8337 /* Default.png in Resources */,
+				66DD216815F17AC000DC8337 /* nav-background.png in Resources */,
+				66DD216915F17AC000DC8337 /* nav-background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

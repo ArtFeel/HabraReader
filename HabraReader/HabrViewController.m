@@ -33,9 +33,6 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    // Set view title
-    self.title = @"Хабрахабр";
-    
     // Load rss data
     RSSParser *parser = [[RSSParser alloc] initWithUrl:kRSSUrl asynchronous:YES];
     [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:YES];

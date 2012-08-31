@@ -24,8 +24,9 @@
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     
-    // Set black statusbar
+    // Set style
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
+    [self applyStylesheet];
     
     return YES;
 }
@@ -50,14 +51,18 @@
     else
         NumberOfCallsToSetVisible--;
     
-    // The assertion helps to find programmer errors in activity indicator management.
-    // Since a negative NumberOfCallsToSetVisible is not a fatal error,
-    // it should probably be removed from production code.
-    NSAssert(NumberOfCallsToSetVisible >= 0, @"Network Activity Indicator was asked to hide more often than shown");
+    // This log helps to find programmer errors in activity indicator management.
+    if (NumberOfCallsToSetVisible >= 0)
+        NSLog(@"Network Activity Indicator was asked to hide more often than shown");
     
     // Display the indicator as long as our static counter is > 0.
     UIApplication *application = [UIApplication sharedApplication];
     [application setNetworkActivityIndicatorVisible:(NumberOfCallsToSetVisible > 0)];
+}
+
+- (void)applyStylesheet {
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+	[navigationBar setBackgroundImage:[UIImage imageNamed:@"nav-background"] forBarMetrics:UIBarMetricsDefault];
 }
 
 @end

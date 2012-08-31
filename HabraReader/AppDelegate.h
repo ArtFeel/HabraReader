@@ -16,5 +16,6 @@
 + (AppDelegate *)sharedInstance;
 
 - (void)setNetworkActivityIndicatorVisible:(BOOL)setVisible;
+- (void)applyStylesheet;
 
 @end
