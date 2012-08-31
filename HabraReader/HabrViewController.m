@@ -8,6 +8,7 @@
 
 #import "HabrViewController.h"
 #import "AppDelegate.h"
+#import "HabraPostCell.h"
 #import "DetailViewController.h"
 
 
@@ -37,6 +38,7 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
     
     // Load rss data
     RSSParser *parser = [[RSSParser alloc] initWithUrl:kRSSUrl asynchronous:YES];
+    [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:YES];
     [parser setDelegate:self];
     [parser parse];
 }
@@ -47,22 +49,11 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
     [super dealloc];
 }
 
-
-//- (void)insertNewObject:(id)sender
-//{
-//    if (!objects) {
-//        objects = [[NSMutableArray alloc] init];
-//    }
-//    [objects insertObject:[NSDate date] atIndex:0];
-//    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
-
 #pragma mark -
 #pragma mark RSSParser Delegate
+
 - (void)rssParserDidStartParsing:(RSSParser *)parser {
     NSLog(@"Start parsing");
-    [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:YES];
 }
 
 - (void)rssParser:(RSSParser *)parser didParseFeed:(RSSFeed *)feed {
@@ -80,6 +71,11 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 #pragma mark -
 #pragma mark UITableView Delegate
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [HabraPostCell cellHeight];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [[self dataSource] count];
 }
@@ -87,17 +83,18 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *cellIdentifier = @"HabraPostCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    HabraPostCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:cellIdentifier
+                                                     owner:self
+                                                   options:nil];
+        cell = [nib objectAtIndex:0];
     }
 
-
     RSSEntry *entry = [self.dataSource objectAtIndex:indexPath.row];
-    cell.textLabel.text = entry.title;
+    [cell fillCellWithEntry:entry];
     return cell;
 }
 

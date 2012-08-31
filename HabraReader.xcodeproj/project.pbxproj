@@ -18,6 +18,9 @@
 		6650F00E15EFF9FE00F5F0C6 /* HabrViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6650F00C15EFF9FE00F5F0C6 /* HabrViewController.xib */; };
 		6650F01115EFF9FE00F5F0C6 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6650F00F15EFF9FE00F5F0C6 /* DetailViewController.xib */; };
 		667544EB15F10B43008FE800 /* libRSSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667544EA15F10B35008FE800 /* libRSSKit.a */; };
+		66DD213D15F1509600DC8337 /* HabraPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DD213C15F1509600DC8337 /* HabraPostCell.m */; };
+		66DD214115F1511400DC8337 /* HabraPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD214015F1511400DC8337 /* HabraPostCell.xib */; };
+		66DD214415F156F900DC8337 /* habrauser.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD214315F156F900DC8337 /* habrauser.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,10 @@
 		6650F01015EFF9FE00F5F0C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		6650F01715EFFAEA00F5F0C6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		667544E215F10B35008FE800 /* RSSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSSKit.xcodeproj; path = RSSKit/RSSKit.xcodeproj; sourceTree = "<group>"; };
+		66DD213B15F1509600DC8337 /* HabraPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HabraPostCell.h; sourceTree = "<group>"; };
+		66DD213C15F1509600DC8337 /* HabraPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HabraPostCell.m; sourceTree = "<group>"; };
+		66DD214015F1511400DC8337 /* HabraPostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HabraPostCell.xib; sourceTree = "<group>"; };
+		66DD214315F156F900DC8337 /* habrauser.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = habrauser.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +137,7 @@
 			children = (
 				66DD213615F1218600DC8337 /* Habr App Delegate */,
 				66DD213515F1217900DC8337 /* Controllers */,
+				66DD213E15F150A000DC8337 /* Cells */,
 				66DD213915F121DD00DC8337 /* Helpers */,
 			);
 			name = Classes;
@@ -159,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				66DD213815F121A400DC8337 /* Views */,
+				66DD213F15F150EF00DC8337 /* Cells */,
+				66DD214215F156DC00DC8337 /* Images */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -184,6 +194,31 @@
 			children = (
 			);
 			name = Vendors;
+			sourceTree = "<group>";
+		};
+		66DD213E15F150A000DC8337 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				66DD213B15F1509600DC8337 /* HabraPostCell.h */,
+				66DD213C15F1509600DC8337 /* HabraPostCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		66DD213F15F150EF00DC8337 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				66DD214015F1511400DC8337 /* HabraPostCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		66DD214215F156DC00DC8337 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				66DD214315F156F900DC8337 /* habrauser.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +291,8 @@
 				6650EFFF15EFF9FE00F5F0C6 /* InfoPlist.strings in Resources */,
 				6650F00E15EFF9FE00F5F0C6 /* HabrViewController.xib in Resources */,
 				6650F01115EFF9FE00F5F0C6 /* DetailViewController.xib in Resources */,
+				66DD214115F1511400DC8337 /* HabraPostCell.xib in Resources */,
+				66DD214415F156F900DC8337 /* habrauser.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +307,7 @@
 				6650F00515EFF9FE00F5F0C6 /* AppDelegate.m in Sources */,
 				6650F00815EFF9FE00F5F0C6 /* HabrViewController.m in Sources */,
 				6650F00B15EFF9FE00F5F0C6 /* DetailViewController.m in Sources */,
+				66DD213D15F1509600DC8337 /* HabraPostCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
