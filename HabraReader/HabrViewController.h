@@ -9,9 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <RSSKit/RSSKit.h>
 
-@class DetailViewController;
+@class TSMiniWebBrowser;
 
 @interface HabrViewController : UITableViewController <RSSParserDelegate>
-@property (strong, nonatomic) DetailViewController *detailViewController;
-@property (nonatomic, retain) DetailViewController *dddController;
+@property (nonatomic, retain) TSMiniWebBrowser *webBrowser;
 @end

@@ -9,7 +9,7 @@
 #import "HabrViewController.h"
 #import "AppDelegate.h"
 #import "HabraPostCell.h"
-#import "DetailViewController.h"
+#import "TSMiniWebBrowser/TSMiniWebBrowser.h"
 
 
 #pragma mark HabrViewController (Private methods)
@@ -25,7 +25,7 @@
 static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 
 @synthesize dataSource;
-@synthesize detailViewController;
+@synthesize webBrowser;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -34,14 +34,16 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
     [super viewWillAppear:animated];
     
     // Load rss data
-    RSSParser *parser = [[RSSParser alloc] initWithUrl:kRSSUrl asynchronous:YES];
-    [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:YES];
-    [parser setDelegate:self];
-    [parser parse];
+    if (!dataSource) {
+        RSSParser *parser = [[RSSParser alloc] initWithUrl:kRSSUrl asynchronous:YES];
+        [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:YES];
+        [parser setDelegate:self];
+        [parser parse];
+    }
 }
 
 - (void)dealloc {
-    [detailViewController release];
+    [self setWebBrowser:nil];
     [self setDataSource:nil];
     [super dealloc];
 }
@@ -77,7 +79,6 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
     return [[self dataSource] count];
 }
 
-// Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"HabraPostCell";
@@ -96,12 +97,20 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (!self.detailViewController) {
-//        self.detailViewController = [[[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil] autorelease];
-//    }
-//    NSDate *object = [objects objectAtIndex:indexPath.row];
-//    self.detailViewController.detailItem = object;
-//    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    RSSEntry *entry = [dataSource objectAtIndex:indexPath.row];
+    NSString *encoded = [entry.url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:encoded];
+    
+    if (!self.webBrowser) {
+        self.webBrowser = [[[TSMiniWebBrowser alloc] initWithUrl:url] autorelease];
+        self.webBrowser.mode = TSMiniWebBrowserModeNavigation;
+        self.webBrowser.showURLStringOnActionSheetTitle = YES;
+        self.webBrowser.showPageTitleOnTitleBar = NO;
+    } else {
+        [self.webBrowser loadURL:url];
+    }
+    
+    [self.navigationController pushViewController:webBrowser animated:YES];
 }
 
 @end

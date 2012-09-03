@@ -52,7 +52,7 @@
         NumberOfCallsToSetVisible--;
     
     // This log helps to find programmer errors in activity indicator management.
-    if (NumberOfCallsToSetVisible >= 0)
+    if (NumberOfCallsToSetVisible < 0)
         NSLog(@"Network Activity Indicator was asked to hide more often than shown");
     
     // Display the indicator as long as our static counter is > 0.
