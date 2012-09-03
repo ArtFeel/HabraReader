@@ -9,7 +9,7 @@
 #import "HabrViewController.h"
 #import "AppDelegate.h"
 #import "HabraPostCell.h"
-#import "TSMiniWebBrowser/TSMiniWebBrowser.h"
+#import <SVWebViewController/SVWebViewController.h>
 
 
 #pragma mark HabrViewController (Private methods)
@@ -25,7 +25,6 @@
 static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 
 @synthesize dataSource;
-@synthesize webBrowser;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -43,7 +42,6 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 }
 
 - (void)dealloc {
-    [self setWebBrowser:nil];
     [self setDataSource:nil];
     [super dealloc];
 }
@@ -99,18 +97,11 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     RSSEntry *entry = [dataSource objectAtIndex:indexPath.row];
     NSString *encoded = [entry.url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSURL *url = [NSURL URLWithString:encoded];
     
-    if (!self.webBrowser) {
-        self.webBrowser = [[[TSMiniWebBrowser alloc] initWithUrl:url] autorelease];
-        self.webBrowser.mode = TSMiniWebBrowserModeNavigation;
-        self.webBrowser.showURLStringOnActionSheetTitle = YES;
-        self.webBrowser.showPageTitleOnTitleBar = NO;
-    } else {
-        [self.webBrowser loadURL:url];
-    }
-    
-    [self.navigationController pushViewController:webBrowser animated:YES];
+    SVWebViewController *browser = [[SVWebViewController alloc] initWithAddress:encoded];
+    [browser setCustomTitle:@""];
+    [self.navigationController pushViewController:browser animated:YES];
+    [browser release];
 }
 
 @end
