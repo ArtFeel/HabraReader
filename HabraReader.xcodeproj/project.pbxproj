@@ -33,6 +33,7 @@
 		66DD217E15F1806400DC8337 /* reload_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD217515F1806400DC8337 /* reload_icon@2x.png */; };
 		66DD217F15F1806400DC8337 /* TSMiniWebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DD217715F1806400DC8337 /* TSMiniWebBrowser.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		66DD218015F1806400DC8337 /* TSMiniWebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD217815F1806400DC8337 /* TSMiniWebBrowser.xib */; };
+		E2B7A639022947F39C9E4D27 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1F35ADF4734BE4BFE2D0A3 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,10 +47,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		50E9D3496E8B4BF7A7E64149 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		6650EFF015EFF9FD00F5F0C6 /* HabraReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabraReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		6650EFF415EFF9FD00F5F0C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6650EFF615EFF9FD00F5F0C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		6650EFF815EFF9FE00F5F0C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6650EFF415EFF9FD00F5F0C6 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6650EFF615EFF9FD00F5F0C6 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6650EFF815EFF9FE00F5F0C6 /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6650EFFC15EFF9FE00F5F0C6 /* HabraReader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HabraReader-Info.plist"; sourceTree = "<group>"; };
 		6650EFFE15EFF9FE00F5F0C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6650F00015EFF9FE00F5F0C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		66DD217615F1806400DC8337 /* TSMiniWebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSMiniWebBrowser.h; sourceTree = "<group>"; };
 		66DD217715F1806400DC8337 /* TSMiniWebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSMiniWebBrowser.m; sourceTree = "<group>"; };
 		66DD217815F1806400DC8337 /* TSMiniWebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSMiniWebBrowser.xib; sourceTree = "<group>"; };
+		CC1F35ADF4734BE4BFE2D0A3 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +94,7 @@
 				6650EFF515EFF9FD00F5F0C6 /* UIKit.framework in Frameworks */,
 				6650EFF715EFF9FD00F5F0C6 /* Foundation.framework in Frameworks */,
 				6650EFF915EFF9FE00F5F0C6 /* CoreGraphics.framework in Frameworks */,
+				E2B7A639022947F39C9E4D27 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +107,7 @@
 				6650EFFA15EFF9FE00F5F0C6 /* HabraReader */,
 				6650EFF315EFF9FD00F5F0C6 /* Frameworks */,
 				6650EFF115EFF9FD00F5F0C6 /* Products */,
+				50E9D3496E8B4BF7A7E64149 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +127,7 @@
 				6650EFF415EFF9FD00F5F0C6 /* UIKit.framework */,
 				6650EFF615EFF9FD00F5F0C6 /* Foundation.framework */,
 				6650EFF815EFF9FE00F5F0C6 /* CoreGraphics.framework */,
+				CC1F35ADF4734BE4BFE2D0A3 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 				6650EFEC15EFF9FD00F5F0C6 /* Sources */,
 				6650EFED15EFF9FD00F5F0C6 /* Frameworks */,
 				6650EFEE15EFF9FD00F5F0C6 /* Resources */,
+				21C1B188F8354148B7B18AE6 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -353,6 +360,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21C1B188F8354148B7B18AE6 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6650EFEC15EFF9FD00F5F0C6 /* Sources */ = {
@@ -438,6 +462,7 @@
 		};
 		6650F01515EFF9FE00F5F0C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50E9D3496E8B4BF7A7E64149 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HabraReader/HabraReader-Prefix.pch";
@@ -454,6 +479,7 @@
 		};
 		6650F01615EFF9FE00F5F0C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50E9D3496E8B4BF7A7E64149 /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HabraReader/HabraReader-Prefix.pch";

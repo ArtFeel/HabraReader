@@ -1,0 +1,11 @@
+PODS:
+  - Reachability (3.0.0)
+  - SVProgressHUD (0.7)
+  - SVPullToRefresh (0.3)
+  - SVWebViewController (0.1)
+
+DEPENDENCIES:
+  - Reachability
+  - SVProgressHUD [HEAD]
+  - SVPullToRefresh
+  - SVWebViewController [HEAD]
