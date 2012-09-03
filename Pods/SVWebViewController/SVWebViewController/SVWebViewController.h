@@ -15,6 +15,7 @@
 - (id)initWithAddress:(NSString*)urlString;
 - (id)initWithURL:(NSURL*)URL;
 
+@property (nonatomic, readwrite) NSString* customTitle;
 @property (nonatomic, readwrite) SVWebViewControllerAvailableActions availableActions;
 
 @end

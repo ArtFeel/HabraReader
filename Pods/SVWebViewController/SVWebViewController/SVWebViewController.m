@@ -36,6 +36,7 @@
 
 @implementation SVWebViewController
 
+@synthesize customTitle;
 @synthesize availableActions;
 
 @synthesize URL, mainWebView;
@@ -277,7 +278,11 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
 	[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     
-    self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    if (self.customTitle) {
+        self.navigationItem.title = self.customTitle;
+    } else {
+        self.navigationItem.title = [webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    }
     [self updateToolbarItems];
 }
 
