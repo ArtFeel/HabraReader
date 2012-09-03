@@ -10,11 +10,17 @@
 #import "AppDelegate.h"
 #import "HabraPostCell.h"
 #import <SVWebViewController/SVWebViewController.h>
+#import <SVPullToRefresh/SVPullToRefresh.h>
 
 
 #pragma mark HabrViewController (Private methods)
 @interface HabrViewController ()
+
 @property (nonatomic, retain) NSArray *dataSource;
+@property (nonatomic, retain) RSSParser *rssParser;
+
+- (void)loadNewPosts;
+- (void)customizePullDownToRefresh;
 @end
 
 
@@ -25,6 +31,7 @@
 static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 
 @synthesize dataSource;
+@synthesize rssParser;
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -34,16 +41,44 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
     
     // Load rss data
     if (!dataSource) {
-        RSSParser *parser = [[RSSParser alloc] initWithUrl:kRSSUrl asynchronous:YES];
-        [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:YES];
-        [parser setDelegate:self];
-        [parser parse];
+        [self loadNewPosts];
+        [self customizePullDownToRefresh];
     }
 }
 
 - (void)dealloc {
     [self setDataSource:nil];
     [super dealloc];
+}
+
+#pragma mark -
+#pragma mark Private methods
+
+- (void)loadNewPosts {
+    if (!self.rssParser) {
+        RSSParser *parser = [[RSSParser alloc] initWithUrl:kRSSUrl asynchronous:YES];
+        [parser setDelegate:self];
+        self.rssParser = parser;
+        [parser release];
+    }
+    
+    [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:YES];
+    [self.rssParser parse];
+}
+
+- (void)customizePullDownToRefresh {
+    // Setup date formatter
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterNoStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    self.tableView.pullToRefreshView.dateFormatter = dateFormatter;
+    [dateFormatter release];
+    
+    // Setup pullToRefresh action block
+    [self.tableView addPullToRefreshWithActionHandler:^{
+        NSLog(@"Load new posts");
+        [self loadNewPosts];
+    }];
 }
 
 #pragma mark -
@@ -56,12 +91,15 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 - (void)rssParser:(RSSParser *)parser didParseFeed:(RSSFeed *)feed {
     NSLog(@"Parsed successfully!");
     self.dataSource = [feed articles];
+    self.tableView.pullToRefreshView.lastUpdatedDate = [NSDate date];
+    [self.tableView.pullToRefreshView stopAnimating];
     [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:NO];
     [self.tableView reloadData];
 }
 
 - (void)rssParser:(RSSParser *)parser didFailWithError:(NSError *)error {
     NSLog(@"%@", error.localizedDescription);
+    [self.tableView.pullToRefreshView stopAnimating];
     [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:NO];
 }
 
@@ -100,6 +138,8 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
     
     SVWebViewController *browser = [[SVWebViewController alloc] initWithAddress:encoded];
     [browser setCustomTitle:@""];
+    
+    [self.tableView.pullToRefreshView stopAnimating];
     [self.navigationController pushViewController:browser animated:YES];
     [browser release];
 }
