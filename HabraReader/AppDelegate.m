@@ -7,14 +7,24 @@
 //
 
 #import "AppDelegate.h"
+
+#import <Reachability/Reachability.h>
 #import "HabrViewController.h"
 
+
+#pragma mark AppDelegate (Private methods)
+@interface AppDelegate ()
+- (void)applyStylesheet;
+@end
+
+#pragma mark -
+#pragma mark AppDelegate
 @implementation AppDelegate
 
 @synthesize window;
 @synthesize navigationController;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (BOOL)application:(UIApplication *)app didFinishLaunchingWithOptions:(NSDictionary *)options {
     // Create main view
     HabrViewController *habrViewController = [[[HabrViewController alloc] init] autorelease];
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:habrViewController] autorelease];
@@ -25,7 +35,7 @@
     [self.window makeKeyAndVisible];
     
     // Set style
-    [application setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
+    [app setStatusBarStyle:UIStatusBarStyleBlackOpaque animated:NO];
     [self applyStylesheet];
     
     return YES;
@@ -35,6 +45,17 @@
     [window release];
     [navigationController release];
     [super dealloc];
+}
+
+#pragma mark -
+#pragma Private methods
+
+- (void)applyStylesheet {
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+	[navigationBar setBackgroundImage:[UIImage imageNamed:@"nav-background"]
+                        forBarMetrics:UIBarMetricsDefault];
+    
+    [navigationBar setTintColor:[UIColor colorWithRed:0 green:0.4f blue:0.4f alpha:0.8f]];
 }
 
 #pragma mark -
@@ -60,9 +81,9 @@
     [application setNetworkActivityIndicatorVisible:(NumberOfCallsToSetVisible > 0)];
 }
 
-- (void)applyStylesheet {
-    UINavigationBar *navigationBar = [UINavigationBar appearance];
-	[navigationBar setBackgroundImage:[UIImage imageNamed:@"nav-background"] forBarMetrics:UIBarMetricsDefault];
+- (BOOL)isNetworkReachable {
+    Reachability* reachability = [Reachability reachabilityWithHostname:@"m.habrahabr.ru"];
+    return [reachability isReachable];
 }
 
 @end

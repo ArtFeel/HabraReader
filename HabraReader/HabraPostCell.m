@@ -62,7 +62,8 @@
     
     // Conver nsdate to formatted string
     NSLocale *ruLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"ru_RU"];
-    [dateFormatter setDateFormat:@"dd MMMM yyyy 'в' HH:mm"];
+    NSString *format = [NSString stringWithFormat:@"dd MMMM yyyy '%@' HH:mm", LSTRING(@"at")];
+    [dateFormatter setDateFormat:format];
     [dateFormatter setLocale:ruLocale];
     NSString *formatedDate = [dateFormatter stringFromDate:date];
     [dateFormatter release];

@@ -1,0 +1,16 @@
+/* 
+  localized.strings
+  HabraReader
+
+  Created by Philip Vasilchenko on 04.09.12.
+  Copyright (c) 2012 Philip Vasilchenko. All rights reserved.
+*/
+
+
+// Habr View Controller
+"Loading..." = "Loading...";
+"No Internet connection" = "No Internet connection";
+"Error, try again later" = "Error, try again later";
+
+// Date Formatter
+"at" = "at";

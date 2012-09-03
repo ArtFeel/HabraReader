@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		660B8EB615F56A3600004E8D /* localized.strings in Resources */ = {isa = PBXBuildFile; fileRef = 660B8EB815F56A3600004E8D /* localized.strings */; };
 		6650EFF515EFF9FD00F5F0C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6650EFF415EFF9FD00F5F0C6 /* UIKit.framework */; };
 		6650EFF715EFF9FD00F5F0C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6650EFF615EFF9FD00F5F0C6 /* Foundation.framework */; };
 		6650EFF915EFF9FE00F5F0C6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6650EFF815EFF9FE00F5F0C6 /* CoreGraphics.framework */; };
@@ -41,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		50E9D3496E8B4BF7A7E64149 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		660B8EB715F56A3600004E8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/localized.strings; sourceTree = "<group>"; };
+		660B8EE815F56C9900004E8D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/localized.strings; sourceTree = "<group>"; };
 		6650EFF015EFF9FD00F5F0C6 /* HabraReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabraReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6650EFF415EFF9FD00F5F0C6 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6650EFF615EFF9FD00F5F0C6 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		660B8EB315F5696E00004E8D /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				660B8EB815F56A3600004E8D /* localized.strings */,
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
 		6650EFE515EFF9FD00F5F0C6 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +190,7 @@
 		66DD213715F1219B00DC8337 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				660B8EB315F5696E00004E8D /* Localization */,
 				66DD213815F121A400DC8337 /* Views */,
 				66DD213F15F150EF00DC8337 /* Cells */,
 				66DD214215F156DC00DC8337 /* Images */,
@@ -303,6 +315,7 @@
 				66DD216515F17A6000DC8337 /* Default.png in Resources */,
 				66DD216815F17AC000DC8337 /* nav-background.png in Resources */,
 				66DD216915F17AC000DC8337 /* nav-background@2x.png in Resources */,
+				660B8EB615F56A3600004E8D /* localized.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +353,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		660B8EB815F56A3600004E8D /* localized.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				660B8EB715F56A3600004E8D /* en */,
+				660B8EE815F56C9900004E8D /* ru */,
+			);
+			name = localized.strings;
+			sourceTree = "<group>";
+		};
 		6650EFFD15EFF9FE00F5F0C6 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

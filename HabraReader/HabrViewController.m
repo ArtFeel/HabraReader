@@ -11,6 +11,7 @@
 #import <RSSKit/RSSKit.h>
 #import <SVWebViewController/SVWebViewController.h>
 #import <SVPullToRefresh/SVPullToRefresh.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #import "AppDelegate.h"
 #import "HabraPostCell.h"
@@ -58,6 +59,7 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
 #pragma mark Private methods
 
 - (void)loadNewPosts {
+    // Init parser if needed
     if (!self.rssParser) {
         RSSParser *parser = [[RSSParser alloc] initWithUrl:kRSSUrl asynchronous:YES];
         [parser setDelegate:self];
@@ -65,8 +67,16 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
         [parser release];
     }
     
-    [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:YES];
-    [self.rssParser parse];
+    // Check internet connection
+    if ([[AppDelegate sharedInstance] isNetworkReachable]) {
+        [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:YES];
+        [SVProgressHUD showWithStatus:LSTRING(@"Loading...")
+                             maskType:SVProgressHUDMaskTypeGradient];
+        [self.rssParser parse];
+    } else {
+        [self.tableView.pullToRefreshView stopAnimating];
+        [SVProgressHUD showErrorWithStatus:LSTRING(@"No Internet connection")];
+    }
 }
 
 - (void)customizePullDownToRefresh {
@@ -97,6 +107,7 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
     self.tableView.pullToRefreshView.lastUpdatedDate = [NSDate date];
     [self.tableView.pullToRefreshView stopAnimating];
     [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:NO];
+    [SVProgressHUD dismiss];
     [self.tableView reloadData];
 }
 
@@ -104,6 +115,7 @@ static NSString *const kRSSUrl = @"http://habrahabr.ru/rss";
     NSLog(@"%@", error.localizedDescription);
     [self.tableView.pullToRefreshView stopAnimating];
     [[AppDelegate sharedInstance] setNetworkActivityIndicatorVisible:NO];
+    [SVProgressHUD showErrorWithStatus:LSTRING(@"Error, try again later")];
 }
 
 #pragma mark -
