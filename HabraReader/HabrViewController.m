@@ -7,14 +7,17 @@
 //
 
 #import "HabrViewController.h"
-#import "AppDelegate.h"
-#import "HabraPostCell.h"
+
+#import <RSSKit/RSSKit.h>
 #import <SVWebViewController/SVWebViewController.h>
 #import <SVPullToRefresh/SVPullToRefresh.h>
 
+#import "AppDelegate.h"
+#import "HabraPostCell.h"
+
 
 #pragma mark HabrViewController (Private methods)
-@interface HabrViewController ()
+@interface HabrViewController () <RSSParserDelegate>
 
 @property (nonatomic, retain) NSArray *dataSource;
 @property (nonatomic, retain) RSSParser *rssParser;

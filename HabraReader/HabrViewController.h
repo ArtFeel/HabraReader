@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <RSSKit/RSSKit.h>
 
-@interface HabrViewController : UITableViewController <RSSParserDelegate>
+@interface HabrViewController : UITableViewController
 @end
