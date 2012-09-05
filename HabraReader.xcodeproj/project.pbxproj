@@ -16,7 +16,6 @@
 		6650F00515EFF9FE00F5F0C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6650F00415EFF9FE00F5F0C6 /* AppDelegate.m */; };
 		6650F00815EFF9FE00F5F0C6 /* HabrViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6650F00715EFF9FE00F5F0C6 /* HabrViewController.m */; };
 		6650F00E15EFF9FE00F5F0C6 /* HabrViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6650F00C15EFF9FE00F5F0C6 /* HabrViewController.xib */; };
-		667544EB15F10B43008FE800 /* libRSSKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 667544EA15F10B35008FE800 /* libRSSKit.a */; };
 		6686214415F4F567005FF06A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6686214315F4F567005FF06A /* MessageUI.framework */; };
 		66DD213D15F1509600DC8337 /* HabraPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DD213C15F1509600DC8337 /* HabraPostCell.m */; };
 		66DD214115F1511400DC8337 /* HabraPostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66DD214015F1511400DC8337 /* HabraPostCell.xib */; };
@@ -29,16 +28,6 @@
 		66DD216915F17AC000DC8337 /* nav-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66DD216715F17AC000DC8337 /* nav-background@2x.png */; };
 		E2B7A639022947F39C9E4D27 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC1F35ADF4734BE4BFE2D0A3 /* libPods.a */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		667544E915F10B35008FE800 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 667544E215F10B35008FE800 /* RSSKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BF3A6F74152C100A0020B7C5;
-			remoteInfo = RSSKit;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		50E9D3496E8B4BF7A7E64149 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
@@ -58,7 +47,6 @@
 		6650F00715EFF9FE00F5F0C6 /* HabrViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HabrViewController.m; sourceTree = "<group>"; };
 		6650F00D15EFF9FE00F5F0C6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HabrViewController.xib; sourceTree = "<group>"; };
 		6650F01715EFFAEA00F5F0C6 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		667544E215F10B35008FE800 /* RSSKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RSSKit.xcodeproj; path = RSSKit/RSSKit.xcodeproj; sourceTree = "<group>"; };
 		6686214315F4F567005FF06A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		66DD213B15F1509600DC8337 /* HabraPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HabraPostCell.h; sourceTree = "<group>"; };
 		66DD213C15F1509600DC8337 /* HabraPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HabraPostCell.m; sourceTree = "<group>"; };
@@ -82,7 +70,6 @@
 				6686214415F4F567005FF06A /* MessageUI.framework in Frameworks */,
 				6650EFF715EFF9FD00F5F0C6 /* Foundation.framework in Frameworks */,
 				6650EFF915EFF9FE00F5F0C6 /* CoreGraphics.framework in Frameworks */,
-				667544EB15F10B43008FE800 /* libRSSKit.a in Frameworks */,
 				E2B7A639022947F39C9E4D27 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,7 +106,6 @@
 		6650EFF315EFF9FD00F5F0C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				667544E215F10B35008FE800 /* RSSKit.xcodeproj */,
 				6686214315F4F567005FF06A /* MessageUI.framework */,
 				6650F01715EFFAEA00F5F0C6 /* QuartzCore.framework */,
 				6650EFF415EFF9FD00F5F0C6 /* UIKit.framework */,
@@ -149,14 +135,6 @@
 				6650F00215EFF9FE00F5F0C6 /* HabraReader-Prefix.pch */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		667544E315F10B35008FE800 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				667544EA15F10B35008FE800 /* libRSSKit.a */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		66DD213415F1213100DC8337 /* Classes */ = {
@@ -277,28 +255,12 @@
 			mainGroup = 6650EFE515EFF9FD00F5F0C6;
 			productRefGroup = 6650EFF115EFF9FD00F5F0C6 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 667544E315F10B35008FE800 /* Products */;
-					ProjectRef = 667544E215F10B35008FE800 /* RSSKit.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				6650EFEF15EFF9FD00F5F0C6 /* HabraReader */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		667544EA15F10B35008FE800 /* libRSSKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRSSKit.a;
-			remoteRef = 667544E915F10B35008FE800 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		6650EFEE15EFF9FD00F5F0C6 /* Resources */ = {
@@ -436,11 +398,7 @@
 				GCC_PREFIX_HEADER = "HabraReader/HabraReader-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
 				INFOPLIST_FILE = "HabraReader/HabraReader-Info.plist";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-force_load",
-					"$(BUILT_PRODUCTS_DIR)/libRSSKit.a",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -454,11 +412,7 @@
 				GCC_PREFIX_HEADER = "HabraReader/HabraReader-Prefix.pch";
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)\"/**";
 				INFOPLIST_FILE = "HabraReader/HabraReader-Info.plist";
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-force_load",
-					"$(BUILT_PRODUCTS_DIR)/libRSSKit.a",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
